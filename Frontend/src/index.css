@@ -1,0 +1,505 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.enterpage {
+  background-image: url("../Images/ChatGPT\ Image\ Jul\ 16\,\ 2026\,\ 08_32_34\ PM.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center bottom 0px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.enterpage .enterbox {
+  width: 30%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 500px;
+  font-family: "Courier New", Courier, monospace;
+  color: whitesmoke;
+}
+
+.enterpage .enterbox button {
+  width: 200px;
+  height: 48px;
+  position: relative;
+  overflow: hidden;
+  background: black;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.enterpage .enterbox button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ff7d03;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.enterpage .enterbox button span {
+  position: relative;
+  z-index: 1;
+}
+
+.enterpage .enterbox button:hover::before {
+  transform: translateX(0);
+}
+
+.enterpage .enterbox button:hover {
+  color: white;
+}
+
+/* Login Page */
+
+.loginpage {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../Images/black-friday-elements-assortment.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-content: center;
+}
+
+.loginpage .loginbox {
+  width: 450px;
+  height: 70vh;
+  background-color: white;
+  margin-left: 130px;
+  box-shadow: 0px 0px 20px black;
+  border-radius: 50px 0px;
+}
+
+/* Cart Header */
+.loginpage .loginbox .loginbox1 {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.loginpage .loginbox .loginbox2 {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.input-container {
+  position: relative;
+  margin: 40px;
+}
+
+/* Input field */
+.input-field {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  border: none;
+  border-bottom: 2px solid orange;
+  outline: none;
+  background-color: transparent;
+}
+
+/* Input label */
+.input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  color: rgba(204, 204, 204, 0);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Input highlight */
+.input-highlight {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: orange;
+  transition: all 0.3s ease;
+}
+
+/* Input field:focus styles */
+.input-field:focus + .input-label {
+  top: -20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: orangered;
+}
+
+.input-field:focus + .input-label + .input-highlight {
+  width: 140%;
+}
+
+/* From Uiverse.io by abrahamcalsin */
+
+.loginpage .loginbox .loginbox2 button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #183153;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+}
+
+.loginpage .loginbox .loginbox2 button:after {
+  content: " ";
+  width: 0%;
+  height: 100%;
+  background: orange;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: 0;
+}
+
+.loginpage .loginbox .loginbox2 button:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+
+.loginpage .loginbox .loginbox2 button span {
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 18px 25px;
+  color: #fff;
+  font-size: 1.125em;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+}
+
+.loginpage .loginbox .loginbox2 button:hover span {
+  color: #183153;
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Register Page */
+.loginpage1 {
+  background-image: url("../Images/paper-shopping-bags-dark-background-top-view.jpg");
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-content: center;
+}
+
+.loginpage1 .loginbox3{
+  width: 450px;
+  height: 80vh;
+  background-color: white;
+  margin-left: 130px;
+  box-shadow: 0px 0px 20px black;
+  border-radius: 50px 0px;
+}
+
+/* Cart Header */
+.loginpage1 .loginbox3 .loginbox4 {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.loginpage1 .loginbox3 .loginbox5 {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.loginpage1 .loginbox3 .loginbox4 .input-container {
+  position: relative;
+  margin-top: 30px;
+}
+
+/* Input field */
+.loginpage1 .loginbox3 .loginbox4 .input-field {
+  display: block;
+  width: 90%;
+  padding: 10px;
+  font-size: 20px;
+  border: none;
+  border-bottom: 2px solid orange;
+  outline: none;
+  background-color: transparent;
+}
+
+/* Input label */
+.loginpage1 .loginbox3 .loginbox4 .input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  color: rgba(204, 204, 204, 0);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Input highlight */
+.loginpage1 .loginbox3 .loginbox4 .input-highlight {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: orange;
+  transition: all 0.3s ease;
+}
+
+/* Input field:focus styles */
+.loginpage1 .loginbox3 .loginbox4 .input-field:focus + .input-label {
+  top: -20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: orangered;
+}
+
+.loginpage1 .loginbox3 .loginbox4 .input-field:focus + .input-label + .input-highlight {
+  width: 120%;
+}
+
+/* From Uiverse.io by abrahamcalsin */
+
+.loginpage1 .loginbox3 .loginbox5 button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #183153;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+}
+
+.loginpage1 .loginbox3 .loginbox5 button:after {
+  content: " ";
+  width: 0%;
+  height: 100%;
+  background: orange;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: 0;
+}
+
+.loginpage1 .loginbox3 .loginbox5 button:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+
+.loginpage1 .loginbox3 .loginbox5 button span {
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 18px 25px;
+  color: #fff;
+  font-size: 1.125em;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+}
+
+.loginpage1 .loginbox3 .loginbox5 button:hover span {
+  color: #183153;
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*  Header Component */
+
+.mainnavbar{
+  width: 100%;
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: black;
+}
+
+.mainnavbar .bar1{
+  width: 10%;
+  height: 80%;
+  background-color: skyblue;
+  background-image: url('../Images/image.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  background-size: cover;
+}
+
+.mainnavbar .bar2{
+  width: 12%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+  color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.mainnavbar .bar2:hover{
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+.mainnavbar .bar3{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainnavbar .bar3 input{
+  width: 85%;
+  height: 60%;
+  border: 2px solid white;
+  border: 1px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.mainnavbar .bar3 button{
+  width: 50px;
+  height: 63%;
+  background-color: #ff7d03;
+  border: 2px solid black;
+  transition: 0.3s ease;
+  border-radius: 2px;
+}
+.mainnavbar .bar3 button:active {
+  transform: scale(0.90,0.90);
+}
+
+.mainnavbar .bar4{
+  width: 10%;
+  height: 80%;
+  border:2px solid black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.mainnavbar .bar4:hover{
+  border: 2px solid white;
+}
+
+.mainnavbar .bar5{
+  width: 23%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mainnavbar .bar5 .returnbox{
+  width: 40%;
+  height: 100%;
+  border: 2px solid black;
+  transition: 0.3s ease;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.mainnavbar .bar5 .returnbox:hover{
+  border: 2px solid white;
+}
+
+.mainnavbar .bar5 .cartbox{
+  width: 50%;
+  height: 100%;
+  border: 2px solid black;
+  transition: 0.3s ease;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.mainnavbar .bar5 .cartbox:hover{
+  border: 2px solid white;
+}
