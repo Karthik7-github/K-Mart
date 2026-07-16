@@ -503,3 +503,42 @@
 .mainnavbar .bar5 .cartbox:hover{
   border: 2px solid white;
 }
+
+/* MainPage */
+*{
+  overflow-y: scroll; 
+  scrollbar-width: none;
+}
+
+.mainpagesheet{
+  width: 100%;
+  min-height:120vh;
+  background-color: black;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+   margin-top: 30px;
+}
+
+.mainpagesheet .mainpageiteside {
+  width: 68%;
+  min-height: 80vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+  justify-items:flex-start;
+  align-items: center;
+}
+
+.mainpagesheet .mainpageiteside .bar {
+  width: 100%;      
+  height: 300px;
+  background-color: #fff;
+  margin-left: 10px;
+}
+
+.mainpagesheet .mainpagecartside{
+  width: 30%;
+  min-height: 30vh;
+  background-color: skyblue;
+}

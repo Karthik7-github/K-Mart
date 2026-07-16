@@ -1,8 +1,9 @@
 import React from 'react'
+import Header from "../../Components/header";
 
 const payment = () => {
   return (
-    <div>payment</div>
+    <Header/>
   )
 }
 
