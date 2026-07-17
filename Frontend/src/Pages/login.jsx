@@ -32,7 +32,7 @@ const Login = () => {
       if (data.token) {
         localStorage.setItem("token", data.token);
       }
-      navigate("/user/mainpage");
+      navigate("/mainpage");
       setUsername("");
       setPassword("");
     } catch (err) {

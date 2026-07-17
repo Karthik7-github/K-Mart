@@ -179,6 +179,49 @@ async function UpdateCart(req, res) {
     }
 }
 
+async function DeleteFromCart(req, res) {
+  try {
+    const userId = req.params.id;
+    const { Product } = req.body;
+
+    const cart = await CartModel.findOne({ UserName: userId });
+
+    if (!cart) {
+      return res.status(404).json({
+        message: "Cart not found"
+      });
+    }
+
+    cart.Products = cart.Products.filter(
+      (item) => item.Product.toString() !== Product
+    );
+
+    await cart.save();
+
+    res.status(200).json({
+      Message: "Product removed from cart",
+      Cart: cart
+    });
+
+  } catch (error) {
+    console.log("ERROR:", error);
+    res.status(500).json({
+      message: "Server error"
+    });
+  }
+}
+
+async function GetCart(req,res) {
+    const {id} = req.params;
+
+    const Cart = await CartModel.find({UserName : id}).populate("Products.Product");;
+
+    res.status(200).json({
+        Message: `${id} Cart Products`,
+        Cart : Cart
+    })
+}
+
 async function CreatePayemtBox(req, res) {
     const { UserName, Payments } = req.body;
 
@@ -192,4 +235,6 @@ async function CreatePayemtBox(req, res) {
     })
 }
 
-module.exports = { RegisterUser, GetUsers, Login, CreateProduct, GetProducts, CreateCart, UpdateCart, CreatePayemtBox };
+module.exports = { RegisterUser, GetUsers, Login, CreateProduct, GetProducts, CreateCart, UpdateCart, CreatePayemtBox ,
+    GetCart, DeleteFromCart
+};

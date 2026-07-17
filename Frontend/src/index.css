@@ -235,7 +235,7 @@
   align-content: center;
 }
 
-.loginpage1 .loginbox3{
+.loginpage1 .loginbox3 {
   width: 450px;
   height: 80vh;
   background-color: white;
@@ -310,7 +310,12 @@
   color: orangered;
 }
 
-.loginpage1 .loginbox3 .loginbox4 .input-field:focus + .input-label + .input-highlight {
+.loginpage1
+  .loginbox3
+  .loginbox4
+  .input-field:focus
+  + .input-label
+  + .input-highlight {
   width: 120%;
 }
 
@@ -378,29 +383,33 @@
   }
 }
 
-/*  Header Component */
+/*  Nav Bar */
 
-.mainnavbar{
+.mainnavbar {
   width: 100%;
   height: 12vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
-.mainnavbar .bar1{
+.mainnavbar .bar1 {
   width: 10%;
   height: 80%;
   background-color: skyblue;
-  background-image: url('../Images/image.png');
+  background-image: url("../Images/image.png");
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 10px;
   background-size: cover;
 }
 
-.mainnavbar .bar2{
+.mainnavbar .bar2 {
   width: 12%;
   height: 80%;
   display: flex;
@@ -412,12 +421,12 @@
   border-radius: 10px;
 }
 
-.mainnavbar .bar2:hover{
+.mainnavbar .bar2:hover {
   border: 2px solid white;
   border-radius: 10px;
 }
 
-.mainnavbar .bar3{
+.mainnavbar .bar3 {
   width: 40%;
   height: 100%;
   display: flex;
@@ -425,7 +434,7 @@
   justify-content: center;
 }
 
-.mainnavbar .bar3 input{
+.mainnavbar .bar3 input {
   width: 85%;
   height: 60%;
   border: 2px solid white;
@@ -434,7 +443,7 @@
   font-size: 20px;
 }
 
-.mainnavbar .bar3 button{
+.mainnavbar .bar3 button {
   width: 50px;
   height: 63%;
   background-color: #ff7d03;
@@ -443,13 +452,13 @@
   border-radius: 2px;
 }
 .mainnavbar .bar3 button:active {
-  transform: scale(0.90,0.90);
+  transform: scale(0.9, 0.9);
 }
 
-.mainnavbar .bar4{
+.mainnavbar .bar4 {
   width: 10%;
   height: 80%;
-  border:2px solid black;
+  border: 2px solid black;
   color: white;
   display: flex;
   align-items: center;
@@ -457,11 +466,11 @@
   border-radius: 10px;
 }
 
-.mainnavbar .bar4:hover{
+.mainnavbar .bar4:hover {
   border: 2px solid white;
 }
 
-.mainnavbar .bar5{
+.mainnavbar .bar5 {
   width: 23%;
   height: 80%;
   display: flex;
@@ -469,7 +478,7 @@
   justify-content: space-between;
 }
 
-.mainnavbar .bar5 .returnbox{
+.mainnavbar .bar5 .returnbox {
   width: 40%;
   height: 100%;
   border: 2px solid black;
@@ -483,11 +492,11 @@
   text-decoration: none;
 }
 
-.mainnavbar .bar5 .returnbox:hover{
+.mainnavbar .bar5 .returnbox:hover {
   border: 2px solid white;
 }
 
-.mainnavbar .bar5 .cartbox{
+.mainnavbar .bar5 .cartbox {
   width: 50%;
   height: 100%;
   border: 2px solid black;
@@ -500,45 +509,160 @@
   text-decoration: none;
 }
 
-.mainnavbar .bar5 .cartbox:hover{
+.mainnavbar .bar5 .cartbox:hover {
   border: 2px solid white;
 }
 
 /* MainPage */
-*{
-  overflow-y: scroll; 
+.mainpage {
+  overflow-y: scroll;
   scrollbar-width: none;
 }
 
-.mainpagesheet{
+.mainpagesheet {
   width: 100%;
-  min-height:120vh;
-  background-color: black;
+  min-height: 100vh;
+  background-color: white;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-   margin-top: 30px;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  scrollbar-width: none;
+}
+body {
+  -ms-overflow-style: none;
 }
 
 .mainpagesheet .mainpageiteside {
   width: 68%;
-  min-height: 80vh;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 20px; 
-  justify-items:flex-start;
-  align-items: center;
+  margin-top: 100px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+  align-items: flex-start;
+  margin-top: 100px;
 }
 
 .mainpagesheet .mainpageiteside .bar {
-  width: 100%;      
-  height: 300px;
+  width: 100%;
+  height: 360px;
   background-color: #fff;
+  box-shadow: 0px 0px 5px black;
   margin-left: 10px;
+  margin-bottom: 20px;
+  border: 1px solid black;
 }
 
-.mainpagesheet .mainpagecartside{
-  width: 30%;
-  min-height: 30vh;
-  background-color: skyblue;
+.mainpagesheet .mainpageiteside .bar .barpic {
+  width: 100%;
+  height: 55%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
 }
+
+.mainpagesheet .mainpageiteside .bar .bardetails {
+  width: 98%;
+  min-height: 35%;
+  background-color: #2e2c2c;
+  color: white;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding-left: 2%;
+}
+
+.mainpagesheet .mainpageiteside .bar .add {
+  width: 100%;
+  height: 10%;
+  background-color: #ff7d03;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: 0.1s ease;
+}
+
+.mainpagesheet .mainpageiteside .bar .add:active {
+  background-color: black;
+  color: white;
+}
+
+.mainpagesheet .mainpagecartside {
+  width: 30%;
+  min-height: 22vh;
+  margin-top: 100px;
+  box-shadow: 0px 0px 5px black;
+  margin-right: 10px;
+}
+
+.mainpagesheet .mainpagecartside .smallcarthead {
+  width: 100%;
+  height: 50px;
+  background-color: #ff7d03;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.mainpagesheet .mainpagecartside .smallcartitem {
+  width: 100%;
+  height: 15vh;
+  background-color: white;
+  display: flex;
+  border-bottom: 1px solid black;
+  transition: all 0.3s ease;
+}
+
+.smallpic:hover + .smallresume {
+  background-color: black;
+  color: white;
+}
+
+.mainpagesheet .mainpagecartside .smallcartitem .smallresume:hover {
+  background-color: black;
+  color: white;
+}
+
+.mainpagesheet .mainpagecartside .smallcartitem .smallpic {
+  width: 25%;
+  height: 100%;
+  background-color: #fff;
+  background-image: url("https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRkVH3ASn5pr5bkviaXrD3ZKvrhDNAFgDmvvDbmccZk_Dl7kyG8o6MLa0CTSCyuq_Gh_enWC865VxojcxH3m3Wd7iROl40vN7R_e7SXw-5fcY116vVKvi9U");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;
+}
+
+.mainpagesheet .mainpagecartside .smallcartitem .smallresume {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.mainpagesheet .mainpagecartside .smallcartitem .smalldelete {
+  width: 15%;
+  height: 100%;
+  background-image: url("../Images/image\ copy\ 2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #fff;
+}
+
+.smallcartitem:has(.smalldelete:hover) {
+  background-color: rgb(255, 68, 68);
+}
+

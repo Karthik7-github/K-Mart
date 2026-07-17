@@ -17,6 +17,10 @@ router.post('/create-cart',UserController.CreateCart);
 
 router.put('/update-cart/:id',UserController.UpdateCart);
 
+router.put('/delete-item/:id',UserController.DeleteFromCart);
+
+router.get('/get-cart/:id',UserController.GetCart);
+
 router.post('/create-payment',UserController.CreatePayemtBox);
 
 module.exports = router;
