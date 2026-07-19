@@ -1,17 +1,20 @@
 const mongoose = require('mongoose');
 
-const PaymentSchema = mongoose.Schema({
-    UserName: String,
-    Payments: [
+const PaymentSchema = new mongoose.Schema({
+  UserName: String,
+  Payments: [
+    {
+      Receipt: [
         {
-            Cart: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: "cart"
-            },
-            Amount:Number
+          Product: Object, // or better → ref
+          Quantity: Number
         }
-    ],
-},{ timestamps: true });
+      ],
+      TotalAmount: Number,
+      Date: Date
+    }
+  ]
+}, { timestamps: true });
 
 const PaymentModel = new mongoose.model("payment",PaymentSchema);
 

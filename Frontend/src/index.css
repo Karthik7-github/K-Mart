@@ -466,10 +466,6 @@
   border-radius: 10px;
 }
 
-.mainnavbar .bar4:hover {
-  border: 2px solid white;
-}
-
 .mainnavbar .bar5 {
   width: 23%;
   height: 80%;
@@ -557,6 +553,11 @@ body {
   margin-left: 10px;
   margin-bottom: 20px;
   border: 1px solid black;
+  transition: all 0.3s ease;
+}
+
+.mainpagesheet .mainpageiteside .bar:hover{
+  box-shadow: 7px 7px 0px rgb(40, 37, 37);
 }
 
 .mainpagesheet .mainpageiteside .bar .barpic {
@@ -564,7 +565,7 @@ body {
   height: 55%;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 80%;
+  background-size: 50%;
 }
 
 .mainpagesheet .mainpageiteside .bar .bardetails {
@@ -615,7 +616,7 @@ body {
 
 .mainpagesheet .mainpagecartside .smallcartitem {
   width: 100%;
-  height: 15vh;
+  height: 19vh;
   background-color: white;
   display: flex;
   border-bottom: 1px solid black;
@@ -666,3 +667,481 @@ body {
   background-color: rgb(255, 68, 68);
 }
 
+/* Cart Page Products */
+
+.cartpageproducts{
+  width: 100%;
+  min-height: 50vh;
+  margin-top: 15vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.cartpageproducts .cartproductspart{
+  width: 65%;
+  min-height: 20vh;
+  background-color: black;
+  display: flex;
+}
+
+.cartpageproducts .single{
+  width: 65%;
+  min-height: 20vh;
+  background-color: black;
+  margin-bottom: 30px;
+}
+
+.cartpageproducts .single .cartproductspart{
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  border: 2px solid black;
+  background-color: #ff7d03;
+  color: white;
+}
+
+
+.cartpageproducts .single .cartproductspart .cartproductpic1{
+  width: 20%;
+  height: 20vh;
+  background-color: #fff;
+  background-image: url('../Images/image.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cartproductpic1:hover + .cartproductresume1{
+  background-color: black;
+  color: white;
+}
+
+
+.cartpageproducts .single .cartproductspart .cartproductresume1{
+  width: 70%;
+  height: 20vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding-left: 20px;
+  transition: all 0.3s ease;
+}
+
+.cartpageproducts .single .cartproductspart .cartproductresume1:hover{
+  background-color: black;
+  color: white;
+}
+
+.cartpageproducts .single  .cartproductspart .cartproductdelete1{
+  width: 10%;
+  height: 20vh;
+  background-color: white;
+  background-image: url('../Images/image\ copy\ 2.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+
+.cartpageproducts .generatereceipt{
+  width: 30%;
+  height: 35vh;
+  border: 2px solid black;
+}
+
+.cartpageproducts .generatereceipt .smallrechead{
+  width: 100%;
+  height: 10vh;
+  background-color: #ff7d03;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.cartpageproducts .generatereceipt .smallrecdetails{
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding-left: 30px;
+}
+
+.cartpageproducts .generatereceipt .smallbill{
+  width: 100%;
+  height: 5vh;
+  background-color: black;
+  color: white;
+  border: 0px;
+  transition: all 0.3s ease;
+}
+
+.cartpageproducts .generatereceipt .smallbill:active{
+  background-color: #ff7d03;
+  color: #000;
+}
+
+/* Payment Page */
+
+.paymentsfullbox{
+  width: 100%;
+  min-height: 100vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.paymentsfullbox .paymentbigbox{
+  width: 80%;
+  min-height: 50vh;
+  /* background-color: #ff7d03; */
+  margin-top: 5vh;
+}
+
+.paymentsfullbox .paymentbigbox .paymentsmallbox{
+  width: 100%;
+  min-height: 20vh;
+  border: 2px solid black;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.paymentsfullbox .paymentbigbox .paymentsmallbox .datetotal{
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  color: rgb(210, 179, 0);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.paymentsfullbox .paymentbigbox .paymentsmallbox .totalitems{
+  width: 100%;
+  min-height: 20vh;
+  display: flex;
+  border: 1px solid black;
+}
+
+.paymentsfullbox .paymentbigbox .paymentsmallbox .totalitems .pic{
+  width: 20%;
+  height: 20vh;
+  background-color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  border: 2px solid black;
+}
+
+.paymentsfullbox .paymentbigbox .paymentsmallbox .totalitems .resume{
+  width: 80%;
+  height: 20.6vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding-left: 10px;
+  flex-direction: column;
+  background-color: orange;
+}
+
+
+/* item Page */
+
+.itemspage{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.itemspage .itempic{
+  width: 40%;
+  height: 70vh;
+  margin-top: 10vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-image: url('../Images/165591296_10613770.jpg');
+}
+
+.itemspage .itemdetails{
+  width: 40%;
+  min-height: 40vh;
+  border:4px solid black;
+  margin-top:20vh ;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  padding-left: 10px;
+  justify-content: space-evenly;
+  padding: 10px;
+  gap: 5px;
+  flex-direction: column;
+}
+
+
+/* Fecth */
+.fetch{
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}
+
+/* From Uiverse.io by andrew-manzyk */ 
+.loader {
+  --main-size: 8em;
+  --text-color: #ffffff;
+  --shine-color: #ffffff40;
+  --shadow-color: #aaaaaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+  position: relative;
+  font-size: var(--main-size);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--text-color);
+  width: 7.3em;
+  padding-top: 250px;
+  padding-left: 180px;
+  height: 1em;
+  filter: drop-shadow(0 0 0.05em var(--shine-color));
+}
+
+.loader .text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+}
+
+.loader .text:nth-child(1) {
+  clip-path: polygon(0% 0%, 11.11% 0%, 11.11% 100%, 0% 100%);
+  font-size: calc(var(--main-size) / 20);
+  margin-left: -2.1em;
+  opacity: 0.6;
+}
+
+.loader .text:nth-child(2) {
+  clip-path: polygon(11.11% 0%, 22.22% 0%, 22.22% 100%, 11.11% 100%);
+  font-size: calc(var(--main-size) / 16);
+  margin-left: -0.98em;
+  opacity: 0.7;
+}
+
+.loader .text:nth-child(3) {
+  clip-path: polygon(22.22% 0%, 33.33% 0%, 33.33% 100%, 22.22% 100%);
+  font-size: calc(var(--main-size) / 13);
+  margin-left: -0.33em;
+  opacity: 0.8;
+}
+
+.loader .text:nth-child(4) {
+  clip-path: polygon(33.33% 0%, 44.44% 0%, 44.44% 100%, 33.33% 100%);
+  font-size: calc(var(--main-size) / 11);
+  margin-left: -0.05em;
+  opacity: 0.9;
+}
+
+.loader .text:nth-child(5) {
+  clip-path: polygon(44.44% 0%, 55.55% 0%, 55.55% 100%, 44.44% 100%);
+  font-size: calc(var(--main-size) / 10);
+  margin-left: 0em;
+  opacity: 1;
+}
+
+.loader .text:nth-child(6) {
+  clip-path: polygon(55.55% 0%, 66.66% 0%, 66.66% 100%, 55.55% 100%);
+  font-size: calc(var(--main-size) / 11);
+  margin-left: 0.05em;
+  opacity: 0.9;
+}
+
+.loader .text:nth-child(7) {
+  clip-path: polygon(66.66% 0%, 77.77% 0%, 77.77% 100%, 66.66% 100%);
+  font-size: calc(var(--main-size) / 13);
+  margin-left: 0.33em;
+  opacity: 0.8;
+}
+
+.loader .text:nth-child(8) {
+  clip-path: polygon(77.77% 0%, 88.88% 0%, 88.88% 100%, 77.77% 100%);
+  font-size: calc(var(--main-size) / 16);
+  margin-left: 0.98em;
+  opacity: 0.7;
+}
+
+.loader .text:nth-child(9) {
+  clip-path: polygon(88.88% 0%, 100% 0%, 100% 100%, 88.88% 100%);
+  font-size: calc(var(--main-size) / 20);
+  margin-left: 2.1em;
+  opacity: 0.6;
+}
+
+.loader .text span {
+  animation:
+    scrolling 2s cubic-bezier(0.1, 0.6, 0.9, 0.4) infinite,
+    shadow 2s cubic-bezier(0.1, 0.6, 0.9, 0.4) infinite;
+}
+
+.loader .text:nth-child(1) span {
+  background: linear-gradient(
+    to right,
+    var(--text-color) 4%,
+    var(--shadow-color) 7%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .text:nth-child(2) span {
+  background: linear-gradient(
+    to right,
+    var(--text-color) 9%,
+    var(--shadow-color) 13%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .text:nth-child(3) span {
+  background: linear-gradient(
+    to right,
+    var(--text-color) 15%,
+    var(--shadow-color) 18%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .text:nth-child(4) span {
+  background: linear-gradient(
+    to right,
+    var(--text-color) 20%,
+    var(--shadow-color) 23%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .text:nth-child(6) span {
+  background: linear-gradient(
+    to right,
+    var(--shadow-color) 29%,
+    var(--text-color) 32%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .text:nth-child(7) span {
+  background: linear-gradient(
+    to right,
+    var(--shadow-color) 34%,
+    var(--text-color) 37%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .text:nth-child(8) span {
+  background: linear-gradient(
+    to right,
+    var(--shadow-color) 39%,
+    var(--text-color) 42%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .text:nth-child(9) span {
+  background: linear-gradient(
+    to right,
+    var(--shadow-color) 45%,
+    var(--text-color) 48%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .line {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 0.05em;
+  width: calc(var(--main-size) / 2);
+  margin-top: 0.9em;
+  border-radius: 0.05em;
+}
+
+.loader .line::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--text-color);
+  opacity: 0.3;
+}
+
+.loader .line::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--text-color);
+  border-radius: 0.05em;
+  transform: translateX(-90%);
+  animation: wobble 2s cubic-bezier(0.5, 0.8, 0.5, 0.2) infinite;
+}
+
+@keyframes wobble {
+  0% {
+    transform: translateX(-90%);
+  }
+  50% {
+    transform: translateX(90%);
+  }
+  100% {
+    transform: translateX(-90%);
+  }
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes shadow {
+  0% {
+    background-position: -98% 0;
+  }
+  100% {
+    background-position: 102% 0;
+  }
+}

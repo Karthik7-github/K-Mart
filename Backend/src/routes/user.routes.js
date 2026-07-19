@@ -23,4 +23,10 @@ router.get('/get-cart/:id',UserController.GetCart);
 
 router.post('/create-payment',UserController.CreatePayemtBox);
 
+router.put('/update-payment/:id',UserController.Generatereceipt);
+
+router.get('/get-payments/:id',UserController.GetPayments);
+
+router.post('/insert-many',UserController.AddProducts);
+
 module.exports = router;

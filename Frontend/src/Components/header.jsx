@@ -1,19 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const User = JSON.parse(localStorage.getItem("user"));
+  const [itemname, setItemname] = useState("");
   console.log(User);
+
+  const navigate = useNavigate();
+
+  const searchitem = (name) => {
+    navigate("/mainpage", { state: { search: name } });
+  };
+
+  console.log(itemname);
 
   return (
     <div className="mainnavbar">
-      <Link to="/mainpage" className="bar1"><div></div></Link>
+      <Link to="/mainpage" className="bar1">
+        <div></div>
+      </Link>
       <div className="bar2">
-        <h1>Address</h1>
+          <h1>Address</h1>
       </div>
       <div className="bar3">
-        <input type="text" placeholder="Search for Item" />
-        <button>
+        <input
+          value={itemname}
+          type="text"
+          placeholder="Search for Item"
+          onChange={(res) => {
+            setItemname(res.target.value);
+          }}
+          required
+        />
+        <button onClick={() => searchitem(itemname)}>
           <img
             src="../../Images/image copy.png"
             alt=""

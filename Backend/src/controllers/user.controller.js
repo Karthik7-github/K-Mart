@@ -116,7 +116,7 @@ async function CreateProduct(req, res) {
 }
 
 async function GetProducts(req, res) {
-    const Product = await ProductModel.find();
+    const Product = await ProductModel.find().sort({ _id: -1 });
 
     res.status(200).json({
         Message: "Fetching all Products...",
@@ -180,45 +180,45 @@ async function UpdateCart(req, res) {
 }
 
 async function DeleteFromCart(req, res) {
-  try {
-    const userId = req.params.id;
-    const { Product } = req.body;
+    try {
+        const userId = req.params.id;
+        const { Product } = req.body;
 
-    const cart = await CartModel.findOne({ UserName: userId });
+        const cart = await CartModel.findOne({ UserName: userId });
 
-    if (!cart) {
-      return res.status(404).json({
-        message: "Cart not found"
-      });
+        if (!cart) {
+            return res.status(404).json({
+                message: "Cart not found"
+            });
+        }
+
+        cart.Products = cart.Products.filter(
+            (item) => item.Product.toString() !== Product
+        );
+
+        await cart.save();
+
+        res.status(200).json({
+            Message: "Product removed from cart",
+            Cart: cart
+        });
+
+    } catch (error) {
+        console.log("ERROR:", error);
+        res.status(500).json({
+            message: "Server error"
+        });
     }
-
-    cart.Products = cart.Products.filter(
-      (item) => item.Product.toString() !== Product
-    );
-
-    await cart.save();
-
-    res.status(200).json({
-      Message: "Product removed from cart",
-      Cart: cart
-    });
-
-  } catch (error) {
-    console.log("ERROR:", error);
-    res.status(500).json({
-      message: "Server error"
-    });
-  }
 }
 
-async function GetCart(req,res) {
-    const {id} = req.params;
+async function GetCart(req, res) {
+    const { id } = req.params;
 
-    const Cart = await CartModel.find({UserName : id}).populate("Products.Product");;
+    const Cart = await CartModel.find({ UserName: id }).populate("Products.Product");
 
     res.status(200).json({
         Message: `${id} Cart Products`,
-        Cart : Cart
+        Cart: Cart
     })
 }
 
@@ -235,6 +235,87 @@ async function CreatePayemtBox(req, res) {
     })
 }
 
-module.exports = { RegisterUser, GetUsers, Login, CreateProduct, GetProducts, CreateCart, UpdateCart, CreatePayemtBox ,
-    GetCart, DeleteFromCart
+async function Generatereceipt(req, res) {
+    try {
+        const userid = req.params.id;
+        const { Cart } = req.body;
+
+        if (!Cart || Cart.length === 0) {
+            return res.status(400).json({
+                message: "Cart is empty",
+            });
+        }
+
+        const Paymentcard = await PaymentModel.findOne({ UserName: userid });
+
+        if (!Paymentcard) {
+            return res.status(404).json({
+                message: "PaymentCard not found",
+            });
+        }
+
+        const totalAmount = Cart.reduce((sum, item) => {
+            return sum + item.Product.ProductCost * item.Quantity;
+        }, 0);
+
+        Paymentcard.Payments.push({
+            Receipt: Cart,
+            TotalAmount: totalAmount,
+            Date: new Date(),
+        });
+
+        await Paymentcard.save();
+
+        await CartModel.updateOne(
+            { UserName: userid },
+            { $set: { Products: [] } }
+        );
+
+        res.status(200).json({
+            Message: "Payment Done & Cart Cleared",
+        });
+
+    } catch (error) {
+        console.log("ERROR:", error);
+        res.status(500).json({
+            message: "Server error",
+        });
+    }
+}
+
+async function GetPayments(req, res) {
+    const { id } = req.params;
+
+    const Payments = await PaymentModel.find({ UserName: id });
+
+    if (Payments.length > 0) {
+        Payments[0].Payments.sort(
+            (a, b) => new Date(b.Date) - new Date(a.Date)
+        );
+    }
+
+    res.status(200).json({
+        Message: "User Payments",
+        Payments: Payments,
+    });
+}
+
+async function AddProducts(req, res) {
+    try {
+        const products = req.body;
+
+        const result = await ProductModel.insertMany(products);
+
+        res.status(201).json({
+            message: "Products added successfully",
+            data: result,
+        });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+}
+
+module.exports = {
+    RegisterUser, GetUsers, Login, CreateProduct, GetProducts, CreateCart, UpdateCart, CreatePayemtBox,
+    GetCart, DeleteFromCart, Generatereceipt, GetPayments, AddProducts
 };
