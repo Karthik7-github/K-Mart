@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "../../Components/header";
 import axios from "axios";
+const API = import.meta.env.VITE_API;
 
 const payment = () => {
   const User = JSON.parse(localStorage.getItem("user"));
@@ -10,7 +11,7 @@ const payment = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/user/get-payments/${username}`)
+      .get(`${API}/api/user/get-payments/${username}`)
       .then((res) => {
         setPayment(res.data.Payments[0].Payments);
       })

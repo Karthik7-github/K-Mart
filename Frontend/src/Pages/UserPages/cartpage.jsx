@@ -3,6 +3,7 @@ import Header from "../../Components/header";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+const API = import.meta.env.VITE_API;
 
 const cartpage = () => {
   const User = JSON.parse(localStorage.getItem("user"));
@@ -15,7 +16,7 @@ const cartpage = () => {
   const fetchCart = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/user/get-cart/${username}`,
+        `${API}/api/user/get-cart/${username}`,
       );
       setCart(res.data.Cart[0].Products);
     } catch (err) {
@@ -43,7 +44,7 @@ const cartpage = () => {
   const deleteItem = async (productId) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/user/delete-item/${username}`,
+        `${API}/api/user/delete-item/${username}`,
         {
           method: "PUT",
           headers: {
@@ -82,7 +83,7 @@ const cartpage = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:5000/api/user/update-payment/${username}`,
+        `${API}/api/user/update-payment/${username}`,
         {
           method: "PUT",
           headers: {

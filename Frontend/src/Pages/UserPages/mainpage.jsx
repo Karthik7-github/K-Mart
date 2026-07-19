@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "../../Components/header";
 import axios from "axios";
 import { Link } from "react-router-dom";
+const API = import.meta.env.VITE_API;
 
 const MainPage = () => {
   const [product, setProduct] = useState([]);
@@ -9,7 +10,7 @@ const MainPage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/user/get-products")
+      .get(`${API}/api/user/get-products`)
       .then((res) => {
         setProduct(res.data.Products);
       })
@@ -23,7 +24,7 @@ const MainPage = () => {
   const addItem = async (id) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/user/update-cart/${username}`,
+        `${API}/api/user/update-cart/${username}`,
         {
           method: "PUT",
           headers: {
@@ -47,7 +48,7 @@ const MainPage = () => {
 
   const updatecart = useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/user/get-cart/${username}`)
+      .get(`${API}/api/user/get-cart/${username}`)
       .then((res) => {
         setCart(res.data.Cart[0].Products);
       })
@@ -59,7 +60,7 @@ const MainPage = () => {
   const deleteItem = async (productId) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/user/delete-item/${username}`,
+        `${API}/api/user/delete-item/${username}`,
         {
           method: "PUT",
           headers: {

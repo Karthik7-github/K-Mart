@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+const API = import.meta.env.VITE_API;
 
 const register = () => {
   const [username, setUsername] = useState("");
@@ -10,18 +11,17 @@ const register = () => {
 
   const navigate = useNavigate();
 
-    const handlecart = async () => {
-
+  const handlecart = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/user/create-cart", {
-        method:"POST",
-        headers:{
-          "Content-Type":"application/json"
+      const res = await fetch(`${API}/api/user/create-cart`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        body:JSON.stringify({
+        body: JSON.stringify({
           UserName: username,
-          Products:[]
-        })
+          Products: [],
+        }),
       });
     } catch (error) {
       console.log(error);
@@ -29,17 +29,16 @@ const register = () => {
   };
 
   const handlepayment = async () => {
-
     try {
-      const res = await fetch("http://localhost:5000/api/user/create-payment", {
-        method:"POST",
-        headers:{
-          "Content-Type":"application/json"
+      const res = await fetch(`${API}/api/user/create-payment`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        body:JSON.stringify({
+        body: JSON.stringify({
           UserName: username,
-          Payments:[]
-        })
+          Payments: [],
+        }),
       });
     } catch (error) {
       console.log(error);
@@ -50,7 +49,7 @@ const register = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5000/api/user/resgister-user", {
+      const res = await fetch(`${API}/api/user/resgister-user`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
